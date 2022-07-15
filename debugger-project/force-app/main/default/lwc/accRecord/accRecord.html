@@ -1,0 +1,41 @@
+<template>
+    <lightning-card icon-name="standard:account" title="Account">
+        <lightning-record-edit-form record-id={recordId} object-api-name="Account" onsuccess={handelSuccess} onsubmit={handlesubmit} >
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-input-field field-name="Name" >Name</lightning-input-field>
+            <lightning-input-field field-name="Type" >Type</lightning-input-field>
+            <lightning-input-field field-name="Rating" >Rating</lightning-input-field>
+            <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Save" label="Save">
+            </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+    <lightning-card icon-name="standard:contact" title="Contact">
+        <lightning-record-view-form  record-id={recordId} object-api-name="Contact">
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-output-field field-name="AccountId">
+            </lightning-output-field>
+            <lightning-output-field field-name="FirstName">
+            </lightning-output-field>
+            <lightning-output-field field-name="LastName">
+            </lightning-output-field>
+            <lightning-output-field field-name="Title">
+            </lightning-output-field>
+            <lightning-output-field field-name="Department">
+            </lightning-output-field>
+          </lightning-record-view-form>
+    </lightning-card>
+    <lightning-card icon-name="standard:opportunity" title="Opportunity">
+        <lightning-record-view-form record-id={recordId} object-api-name="Opportunity">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="AccountId"></lightning-output-field>
+                    <lightning-output-field field-name="StageName"></lightning-output-field>
+                    
+                    </div>
+                    </div>
+        </lightning-record-view-form>
+    </lightning-card>
+</template>

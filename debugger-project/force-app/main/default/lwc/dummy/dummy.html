@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account Contact Creator Without Apex" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="First Name" onchange={handleChange} name="firstName" class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input label="Last Name" onchange={handleChange} name="lastName" class="slds-m-bottom_x-small"></lightning-input>                      
+            <lightning-input label="Company Name" onchange={handleChange} name="companyName" class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input-address
+                     address-label="Address"
+                     street-label="Street"
+                     city-label="City"
+                     country-label="Country"
+                     province-label="State"
+                     postal-code-label="PostalCode"
+                     street=""
+                     city=""
+                     country="US"
+                     province=""
+                     postal-code=""
+                     onchange={handleAddressChange}
+                     field-level-help="Help Text for inputAddress field" >
+             </lightning-input-address>                                         
+            <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>
+        </div>
+     </lightning-card>
+</template>

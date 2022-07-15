@@ -1,12 +1,12 @@
-import { LightningElement,api,track,wire} from 'lwc';
-import getAccountRelatedEvents from '@salesforce/apex/LwcEvent.getAccountRelatedEvents';
-import { NavigationMixin } from 'lightning/navigation';
-export default class AccountEvent extends NavigationMixin(LightningElement) {
+import { LightningElement,api,wire } from 'lwc';
+import getAccRelEvents from '@salesforce/apex/accountE.getAccountRelatedEvents';
+import { NavigationMixin } from "lightning/navigation"
+export default class Event extends NavigationMixin(LightningElement) {
     @api recordId
     eventDetails
     showEvent=false
     eventId
-    @wire(getAccountRelatedEvents,{accId : '$recordId'})  
+    @wire(getAccRelEvents,{accId : '$recordId'})  
     events({data,error})
     {
        if(data)
@@ -39,4 +39,5 @@ export default class AccountEvent extends NavigationMixin(LightningElement) {
  
 
     }
+    
 }

@@ -1,0 +1,27 @@
+<template>
+    <template if:false={showContact}>
+        <br/> 
+            <div class="slds-text-align_center slds-text-heading_medium slds-text-font_monospace" >
+                <lightning-card>
+                    <h1 style="font-size: 10px; color:red">No Contcat to display</h1>
+                </lightning-card>
+            </div>
+        <br/> 
+</template>
+<template if:true={showContact}>
+    <template for:each={conDetails} for:item="cons">
+        <div key={cons.Id} class = "slds-p-left_x-small slds-p-right_x-small">
+        <lightning-card>
+            <div class="slds-m-around_small">
+                <lightning-formatted-text value={cons.Title} ></lightning-formatted-text>
+               <lightning-button label={cons.Name} variant="base" onclick={navigateToViewContactPage} value={cons.Id}>
+        </lightning-button><br/>
+        <lightning-formatted-text value={cons.Department} ></lightning-formatted-text>>
+     <lightning-formatted-email value={cons.Email} ></lightning-formatted-email>
+     <lightning-formatted-phone value={cons.Phone}></lightning-formatted-phone>
+                </div>
+        </lightning-card>
+    </div>
+    </template>
+    </template>  
+</template>
